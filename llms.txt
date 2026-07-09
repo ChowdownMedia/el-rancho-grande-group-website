@@ -1,0 +1,26 @@
+# El Rancho Grande Group
+
+> El Rancho Grande Group — 17 locations. Menu and online ordering (pickup + delivery) per location.
+
+## Locations
+- [Mason](https://elranchogrande.info/mason/): 4920 Socialville-Fosters Rd, Mason, OH, 45040
+- [Dent](https://elranchogrande.info/dent/): 6121 Harrison Ave, Cincinnati, OH, 45247
+- [Eastgate](https://elranchogrande.info/eastgate/): 4476 Glen Este-Withamsville Rd, Cincinnati, OH, 45245
+- [Englewood](https://elranchogrande.info/englewood/): 7712 Hoke Rd, Englewood, OH, 45315
+- [Liberty](https://elranchogrande.info/liberty/): 6752 Cincinnati Dayton Rd #107, Liberty Township, OH, 45044
+- [Milford](https://elranchogrande.info/milford/): 315 Rivers Edge Dr, Milford, OH, 45150
+- [West Alexandria](https://elranchogrande.info/west-alexandria/): 3423 US-35, West Alexandria, OH, 45381
+- [West Chester](https://elranchogrande.info/west-chester/): 9229 Floer Dr, West Chester Township, OH, 45069
+- [Wilmington Pike](https://elranchogrande.info/wilmington-pike/): 4139 Wilmington Pike, Kettering, OH, 45440
+- [Centerville](https://elranchogrande.info/centerville/): 1020 Miamisburg Centerville Rd, Washington Township, OH, 45459
+- [Dorothy Lane](https://elranchogrande.info/dorothy-lane/): 1450 W Dorothy Ln, Dayton, OH, 45409
+- [Fairborn](https://elranchogrande.info/fairborn/): 3070 Colonel Glenn Hwy, Fairborn, OH, 45324
+- [Kenwood](https://elranchogrande.info/kenwood/): 6475 E Galbraith Rd, Cincinnati, OH, 45236
+- [Middletown](https://elranchogrande.info/middletown/): 6601 Terhune Dr, Middletown, OH, 45044
+- [Montgomery](https://elranchogrande.info/montgomery/): 11928 Montgomery Rd, Cincinnati, OH, 45249
+- [Sharonville](https://elranchogrande.info/sharonville/): 11765 Lebanon Rd, Sharonville, OH, 45241
+- [West Carrollton](https://elranchogrande.info/west-carrollton/): 2008 S Alex Rd, West Carrollton, OH, 45449
+
+## Pages
+- [Menu](https://elranchogrande.info/menu/)
+- [All Locations](https://elranchogrande.info/locations/)

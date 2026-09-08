@@ -151,7 +151,7 @@ def header(active="", loc=None):
     vip = f"/{loc}/vip/" if loc else "/locations/"
     return ('<header class="hdr"><div class="hdr-in">'
             f'<a class="hdr-logo" href="{home}" aria-label="El Rancho Grande home"><img src="/assets/brand/logo-color.webp" alt="El Rancho Grande Mexican Grill &amp; Cantina" width="152" height="112"></a>'
-            '<nav class="hdr-nav">' + L(mbase(loc) + "/", "Menu", "menu") + L("/locations/", "Locations", "") + L("/about/", "About", "") + L("/gallery/", "Gallery", "") + L("/events/", "Events", "") + L(vip, "Become a VIP", "") + '</nav>'
+            '<nav class="hdr-nav">' + L(mbase(loc) + "/", "Menu", "menu") + L("/locations/", "Locations", "") + L("/about/", "About", "") + L("/gallery/", "Gallery", "gallery") + L("/events/", "Events", "") + L(vip, "Become a VIP", "") + '</nav>'
             f'<a class="hdr-cta" href="{order_url(loc)}"' + (' target="_blank" rel="noopener"' if loc and LOCMAP[loc]["order"] else "") + '>Order Online</a></div></header>')
 def footer():
     return ('<footer class="ft"><div class="ft-in">'
@@ -282,6 +282,28 @@ def page_menu_landing(loc=None):
     doc = head(title, desc, f"{DOMAIN}{mbase(loc)}/", ld) + body + "</body></html>"
     write(f"{mbase(loc)}", doc)
 
+GALLERY_SHOTS = ["menu-fajita","menu-birria-ramen","menu-molcajete","menu-carne-asada","menu-camaron-culiacan",
+ "menu-enchiladas-blancas","menu-chicken-mushroom","menu-sampler","menu-asada-de-rancho","menu-raspberry-chicken-salad",
+ "menu-taco-salad","menu-enchilada-poblana","menu-camaron-guajillo","menu-dinner-appetizer","menu-enchilada-chipotle",
+ "menu-margarita-tropical","menu-cantarito","menu-sangria-swirl","menu-mojito","menu-pina-colada",
+ "menu-passion-fruit-margarita","menu-jarrito-preparado","menu-coronarita","menu-blue-tuesday","menu-liquid-marijuana",
+ "menu-mojito-flight","menu-bourbon"]
+def page_gallery():
+    grid = "".join(pic(b, "1/1", "(max-width:860px) 45vw, 22vw", alt="El Rancho Grande") for b in GALLERY_SHOTS if _has(b))
+    body = header("gallery") + (
+        '<main class="container" style="padding:60px 24px 100px"><div style="display:grid;gap:14px;margin-bottom:40px">'
+        '<div class="msec-ey">Food, cantina &amp; good times</div>'
+        '<h1 class="disp" style="margin:0;font-size:clamp(52px,12vw,168px);line-height:.8;letter-spacing:.01em;color:var(--bone)">GALLERY</h1></div>'
+        f'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)">{grid}</div>'
+        '</main>') + footer()
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "ImageGallery", "url": f"{DOMAIN}/gallery/", "name": "El Rancho Grande Gallery", "about": {"@id": f"{DOMAIN}/#organization"}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
+            {"@type": "ListItem", "position": 2, "name": "Gallery", "item": f"{DOMAIN}/gallery/"}]}]}
+    doc = head("Gallery | El Rancho Grande", "Photos from El Rancho Grande: fajitas, birria, seafood, enchiladas, hand-shaken margaritas and the cantina across Cincinnati & Dayton, OH.", f"{DOMAIN}/gallery/", ld) + body + "</body></html>"
+    write("/gallery", doc)
+
 def build_search_index():
     idx = []
     for c in CATS_LIST:
@@ -304,5 +326,6 @@ if __name__ == "__main__":
     build_menu_for(None)                      # shared /menu/
     for l in LOCS:                            # per-location /{slug}/menu/
         build_menu_for(l["slug"])
+    page_gallery()                            # /gallery/ in the menu design system
     n = build_search_index()
     print(f"built /menu/ + {len(LOCS)} location menus x {len(names)} categories; search index {n} items")

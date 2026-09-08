@@ -24,3 +24,8 @@
 ## Pages
 - [Menu](https://elranchogrande.info/menu/)
 - [All Locations](https://elranchogrande.info/locations/)
+- [About](https://elranchogrande.info/about/)
+- [Gallery](https://elranchogrande.info/gallery/)
+- [Events](https://elranchogrande.info/events/)
+
+Each location also has its own menu (e.g. /mason/menu/), VIP signup (/mason/vip/) and links page (/mason/links/).

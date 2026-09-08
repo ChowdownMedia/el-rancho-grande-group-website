@@ -1,0 +1,104 @@
+[
+{
+"slug": "centerville",
+"name": "Centerville",
+"city": "Washington Township",
+"order": "https://online.skytab.com/s/elranchograndecenterville"
+},
+{
+"slug": "dent",
+"name": "Dent",
+"city": "Cincinnati",
+"order": ""
+},
+{
+"slug": "dorothy-lane",
+"name": "Dorothy Lane",
+"city": "Dayton",
+"order": ""
+},
+{
+"slug": "eastgate",
+"name": "Eastgate",
+"city": "Cincinnati",
+"order": ""
+},
+{
+"slug": "englewood",
+"name": "Englewood",
+"city": "Englewood",
+"order": ""
+},
+{
+"slug": "fairborn",
+"name": "Fairborn",
+"city": "Fairborn",
+"order": "https://online.skytab.com/s/elranchograndefairborn"
+},
+{
+"slug": "kenwood",
+"name": "Kenwood",
+"city": "Cincinnati",
+"order": ""
+},
+{
+"slug": "liberty",
+"name": "Liberty",
+"city": "Liberty Township",
+"order": ""
+},
+{
+"slug": "mason",
+"name": "Mason",
+"city": "Mason",
+"order": "https://online.skytab.com/s/elranchograndemason"
+},
+{
+"slug": "middletown",
+"name": "Middletown",
+"city": "Middletown",
+"order": ""
+},
+{
+"slug": "milford",
+"name": "Milford",
+"city": "Milford",
+"order": ""
+},
+{
+"slug": "montgomery",
+"name": "Montgomery",
+"city": "Cincinnati",
+"order": ""
+},
+{
+"slug": "sharonville",
+"name": "Sharonville",
+"city": "Sharonville",
+"order": ""
+},
+{
+"slug": "west-alexandria",
+"name": "West Alexandria",
+"city": "West Alexandria",
+"order": ""
+},
+{
+"slug": "west-carrollton",
+"name": "West Carrollton",
+"city": "West Carrollton",
+"order": "https://online.skytab.com/s/elranchograndewestcarrollton"
+},
+{
+"slug": "west-chester",
+"name": "West Chester",
+"city": "West Chester Township",
+"order": ""
+},
+{
+"slug": "wilmington-pike",
+"name": "Wilmington Pike",
+"city": "Kettering",
+"order": ""
+}
+]

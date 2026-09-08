@@ -294,7 +294,7 @@ def page_gallery():
         '<main class="container" style="padding:60px 24px 100px"><div style="display:grid;gap:14px;margin-bottom:40px">'
         '<div class="msec-ey">Food, cantina &amp; good times</div>'
         '<h1 class="disp" style="margin:0;font-size:clamp(52px,12vw,168px);line-height:.8;letter-spacing:.01em;color:var(--bone)">GALLERY</h1></div>'
-        f'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)">{grid}</div>'
+        f'<div class="gmgrid">{grid}</div>'
         '</main>') + footer()
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "ImageGallery", "url": f"{DOMAIN}/gallery/", "name": "El Rancho Grande Gallery", "about": {"@id": f"{DOMAIN}/#organization"}},

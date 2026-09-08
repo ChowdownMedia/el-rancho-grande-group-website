@@ -21,6 +21,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .eyebrow{font-family:'Tanker',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--corn)}
 .slot{background:repeating-linear-gradient(135deg,var(--ink-panel) 0 9px,var(--ink-raised) 9px 18px);border:1px solid var(--rule);position:relative;overflow:hidden}
 .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gmgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(max-width:600px){.gmgrid{grid-template-columns:repeat(2,1fr)}}
 main,header,footer{position:relative;z-index:1}
 
 /* header */

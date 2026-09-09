@@ -289,12 +289,20 @@ GALLERY_SHOTS = ["menu-fajita","menu-birria-ramen","menu-molcajete","menu-carne-
  "menu-passion-fruit-margarita","menu-jarrito-preparado","menu-coronarita","menu-blue-tuesday","menu-liquid-marijuana",
  "menu-mojito-flight","menu-bourbon"]
 def page_gallery():
-    grid = "".join(pic(b, "1/1", "(max-width:860px) 45vw, 22vw", alt="El Rancho Grande") for b in GALLERY_SHOTS if _has(b))
+    # exact Mi Jalapeno .gm mosaic rhythm (big/tall/regular), 2-col at <=820px
+    CLS = ["gm-big","gm-tall","gm-tall","gm-big","gm-tall","gm-tall","gm-big","","","","","gm-big","","","","","gm-tall","gm-tall"]
+    shots = [b for b in GALLERY_SHOTS if _has(b)]
+    cells = ""
+    for i, b in enumerate(shots):
+        cls = ("gm-cell " + CLS[i]).strip() if i < len(CLS) else "gm-cell"
+        cells += (f'<div class="{cls}"><img src="/assets/images/{b}-800.webp" '
+                  f'srcset="/assets/images/{b}-400.webp 400w, /assets/images/{b}-800.webp 800w, /assets/images/{b}-1600.webp 1600w" '
+                  f'sizes="(max-width:600px) 50vw, (max-width:900px) 33vw, 24vw" width="800" height="600" loading="lazy" decoding="async" alt="El Rancho Grande"></div>')
     body = header("gallery") + (
-        '<main class="container" style="padding:60px 24px 100px"><div style="display:grid;gap:14px;margin-bottom:40px">'
-        '<div class="msec-ey">Food, cantina &amp; good times</div>'
-        '<h1 class="disp" style="margin:0;font-size:clamp(52px,12vw,168px);line-height:.8;letter-spacing:.01em;color:var(--bone)">GALLERY</h1></div>'
-        f'<div class="gmgrid">{grid}</div>'
+        '<main class="wrap" style="padding:62px 26px 110px"><div style="display:grid;gap:16px;margin-bottom:40px">'
+        '<div class="eyebrow">Food, cantina &amp; good times</div>'
+        '<h1 class="disp" style="margin:0;font-size:clamp(48px,11vw,172px);line-height:.8;letter-spacing:.01em;color:var(--bone)">GALLERY</h1></div>'
+        f'<div class="gm">{cells}</div>'
         '</main>') + footer()
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "ImageGallery", "url": f"{DOMAIN}/gallery/", "name": "El Rancho Grande Gallery", "about": {"@id": f"{DOMAIN}/#organization"}},

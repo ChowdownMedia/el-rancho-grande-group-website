@@ -149,10 +149,18 @@ def header(active="", loc=None):
         return f'<a href="{href}"{on}>{label}</a>'
     home = f"/{loc}/" if loc else "/"
     vip = f"/{loc}/vip/" if loc else "/locations/"
+    otarget = ' target="_blank" rel="noopener"' if loc and LOCMAP[loc]["order"] else ""
+    links = (L(mbase(loc) + "/", "Menu", "menu") + L("/locations/", "Locations", "") + L("/about/", "About", "")
+             + L("/gallery/", "Gallery", "gallery") + L("/events/", "Events", "") + L(vip, "Become a VIP", ""))
+    burger = ('<button class="hdr-burger" aria-label="Menu" aria-expanded="false" '
+              'onclick="var d=document.getElementById(\'hdr-drawer\');var o=d.classList.toggle(\'open\');this.setAttribute(\'aria-expanded\',o)">'
+              '<span></span><span></span><span></span></button>')
+    drawer = (f'<div class="hdr-drawer" id="hdr-drawer"><div class="dnav">{links}'
+              f'<a class="dcta" href="{order_url(loc)}"{otarget}>Order Online</a></div></div>')
     return ('<header class="hdr"><div class="hdr-in">'
             f'<a class="hdr-logo" href="{home}" aria-label="El Rancho Grande home"><img src="/assets/brand/logo-color.webp" alt="El Rancho Grande Mexican Grill &amp; Cantina" width="152" height="112"></a>'
-            '<nav class="hdr-nav">' + L(mbase(loc) + "/", "Menu", "menu") + L("/locations/", "Locations", "") + L("/about/", "About", "") + L("/gallery/", "Gallery", "gallery") + L("/events/", "Events", "") + L(vip, "Become a VIP", "") + '</nav>'
-            f'<a class="hdr-cta" href="{order_url(loc)}"' + (' target="_blank" rel="noopener"' if loc and LOCMAP[loc]["order"] else "") + '>Order Online</a></div></header>')
+            f'<nav class="hdr-nav">{links}</nav>'
+            f'<a class="hdr-cta" href="{order_url(loc)}"{otarget}>Order Online</a>{burger}</div>{drawer}</header>')
 def footer():
     return ('<footer class="ft"><div class="ft-in">'
             '<a href="/" aria-label="El Rancho Grande home"><img src="/assets/brand/logo-gold.webp" alt="El Rancho Grande" width="118" height="88"></a>'
@@ -207,7 +215,7 @@ def head(title, desc, canonical, ld):
             f"<title>{e(title)}</title><meta name=\"description\" content=\"{e(desc)}\"><link rel=\"canonical\" href=\"{e(canonical)}\">"
             f"<meta property=\"og:title\" content=\"{e(title)}\"><meta property=\"og:description\" content=\"{e(desc)}\"><meta property=\"og:type\" content=\"restaurant\"><meta property=\"og:url\" content=\"{e(canonical)}\">"
             "<link rel=\"preload\" as=\"font\" type=\"font/woff2\" href=\"/assets/fonts/Tanker-Regular.woff2\" crossorigin><link rel=\"preload\" as=\"font\" type=\"font/woff2\" href=\"/assets/fonts/BespokeSerif-Regular.woff2\" crossorigin>"
-            "<link rel=\"stylesheet\" href=\"/assets/css/menu.css?v=erg2\">"
+            "<link rel=\"stylesheet\" href=\"/assets/css/menu.css?v=erg3\">"
             f"<script type=\"application/ld+json\">{json.dumps(ld, ensure_ascii=False)}</script></head><body>")
 
 def section_ld(cat):

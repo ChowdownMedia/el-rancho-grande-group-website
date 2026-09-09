@@ -289,15 +289,26 @@ GALLERY_SHOTS = ["menu-fajita","menu-birria-ramen","menu-molcajete","menu-carne-
  "menu-passion-fruit-margarita","menu-jarrito-preparado","menu-coronarita","menu-blue-tuesday","menu-liquid-marijuana",
  "menu-mojito-flight","menu-bourbon"]
 def page_gallery():
-    # exact Mi Jalapeno .gm mosaic rhythm (big/tall/regular), 2-col at <=820px
-    CLS = ["gm-big","gm-tall","gm-tall","gm-big","gm-tall","gm-tall","gm-big","","","","","gm-big","","","","","gm-tall","gm-tall"]
-    shots = [b for b in GALLERY_SHOTS if _has(b)]
+    # exact Mi Jalapeno .gm mosaic: drinks (portrait) in the tall cells, dishes
+    # (square) in the big/regular cells, so nothing gets extreme-zoom cropped.
+    GALLERY_ITEMS = [
+        ("gallery-fajita","gm-big"),("gallery-margarita-tropical","gm-tall"),("gallery-cantarito","gm-tall"),
+        ("gallery-molcajete","gm-big"),("gallery-sangria-swirl","gm-tall"),("gallery-mojito","gm-tall"),
+        ("gallery-carne-asada","gm-big"),("gallery-camaron-culiacan",""),("gallery-birria-ramen",""),
+        ("gallery-enchiladas-blancas",""),("gallery-chicken-mushroom",""),("gallery-asada-de-rancho","gm-big"),
+        ("gallery-sampler",""),("gallery-camaron-guajillo",""),("gallery-taco-salad",""),
+        ("gallery-raspberry-chicken-salad",""),("gallery-pina-colada","gm-tall"),("gallery-coronarita","gm-tall"),
+        ("gallery-enchilada-poblana",""),("gallery-dinner-appetizer",""),("gallery-enchilada-chipotle",""),
+        ("gallery-passion-fruit-margarita",""),("gallery-blue-tuesday",""),("gallery-jarrito-preparado",""),
+        ("gallery-liquid-marijuana",""),("gallery-mojito-flight",""),("gallery-bourbon",""),
+    ]
     cells = ""
-    for i, b in enumerate(shots):
-        cls = ("gm-cell " + CLS[i]).strip() if i < len(CLS) else "gm-cell"
+    for b, mod in GALLERY_ITEMS:
+        if not _has(b): continue
+        cls = ("gm-cell " + mod).strip()
         cells += (f'<div class="{cls}"><img src="/assets/images/{b}-800.webp" '
                   f'srcset="/assets/images/{b}-400.webp 400w, /assets/images/{b}-800.webp 800w, /assets/images/{b}-1600.webp 1600w" '
-                  f'sizes="(max-width:600px) 50vw, (max-width:900px) 33vw, 24vw" width="800" height="600" loading="lazy" decoding="async" alt="El Rancho Grande"></div>')
+                  f'sizes="(max-width:600px) 50vw, (max-width:900px) 33vw, 24vw" width="800" height="800" loading="lazy" decoding="async" alt="El Rancho Grande"></div>')
     body = header("gallery") + (
         '<main class="wrap" style="padding:62px 26px 110px"><div style="display:grid;gap:16px;margin-bottom:40px">'
         '<div class="eyebrow">Food, cantina &amp; good times</div>'

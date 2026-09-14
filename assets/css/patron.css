@@ -159,7 +159,8 @@ h1,h2,h3,h4{font-family:'Tanker','Arial Narrow',sans-serif;font-weight:400;line-
 .vip-card .eyebrow{color:var(--gold)}
 .vip-card h2{color:var(--white);font-size:clamp(36px,4.6vw,60px);margin-top:14px}
 .vip-card p{margin-top:16px;max-width:560px;font-size:18px;line-height:1.6;color:var(--text)}
-.vip-card .join{justify-self:end}
+.vip-card .join{justify-self:end;display:flex;flex-direction:column;align-items:center;gap:22px}
+.vip-card .vip-pancho{display:block;width:auto;height:clamp(180px,20vw,250px);filter:drop-shadow(0 22px 30px rgba(0,0,0,.55))}
 .vip-mascot{position:relative;z-index:2;width:100%;max-width:360px;margin:0 auto;display:block;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(0,0,0,.5))}
 .perk{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:left}
 .perk-ic{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}

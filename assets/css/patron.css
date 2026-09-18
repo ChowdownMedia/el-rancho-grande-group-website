@@ -367,5 +367,5 @@ h1,h2,h3,h4{font-family:'Rubik One','Arial Narrow',sans-serif;font-weight:400;li
   .vip-fiesta-grid{grid-template-columns:1fr;gap:10px;padding:40px 22px 42px}
   .vip-pancho-wrap{min-height:auto;order:-1}
   .vip-pancho-img{height:280px}
-  .vip-ribbon{top:34px;left:auto;right:6px}
+  .vip-ribbon{display:none}
 }

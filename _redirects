@@ -1,3 +1,7 @@
+# Old GHL funnel pages -> new clean URLs
+/home-7017 / 301
+/gallery-4815 /gallery/ 301
+
 # Old per-location subdomains -> consolidated location pages
 https://mason.elranchogrande.info /mason/ 301
 https://mason.elranchogrande.info/* /mason/ 301

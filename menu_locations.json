@@ -15,7 +15,7 @@
 "slug": "dorothy-lane",
 "name": "Dorothy Lane",
 "city": "Dayton",
-"order": ""
+"order": "https://online.skytab.com/da759020027f5354f3255befd83e24f3"
 },
 {
 "slug": "eastgate",
@@ -57,7 +57,7 @@
 "slug": "middletown",
 "name": "Middletown",
 "city": "Middletown",
-"order": ""
+"order": "https://online.skytab.com/s/elranchograndemiddletown"
 },
 {
 "slug": "milford",
@@ -99,6 +99,6 @@
 "slug": "wilmington-pike",
 "name": "Wilmington Pike",
 "city": "Kettering",
-"order": ""
+"order": "https://online.skytab.com/s/elranchograndewilmingtonpike"
 }
 ]
